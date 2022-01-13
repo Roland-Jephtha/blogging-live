@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.top-img {
+    background-size: cover;
+    max-width: 100%;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
+
+
+.card-img-top{
+    max-height: 150px;
+    min-height: 100px;
+    object-fit: cover;
+}
+.card{
+    background-color: grey;
+}
+
+
+/* body {
+
+    background-image: url("udemy.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+
+} */
+
+.row{
+    width: 1600px;
+}
+
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: justify;
+    
+}
+
+
+.main-heading{
+    text-align: center;
+    font-weight: 800;
+    color: rgb(65, 65, 160);
+}
+
+.title{
+    font-weight: 800;
+    color: rgb(65, 65, 160);
+}
+
+.post{
+    font-style: italic;
+    color: rgb(65, 65, 160);
+    font-weight: 700;
+}
+
+.links{
+    margin-left: 1100px;
+}
+.card-title{
+    text-align: center;
+    font-weight: 700;
+}
+
+/* input[type="submit"] {
+    margin: 10px;
+    border: 1px solid #529ab1;
+    color:#529ab1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 10px;
+    border-radius: 3px;
+} */

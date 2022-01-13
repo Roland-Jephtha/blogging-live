@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{%load static%}
+{% block page_content %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{%static 'css\bootstrap.min.css'%}">
+<link rel="stylesheet" href="{% static 'style.css'%}">
+
+<div class="row" style="max-width:100%; height:auto">
+<div class="col-md-8 offset-md-2 ">
+    <h1 class="title" >{{ post.title }}</h1>
+    <small>
+        {{ post.created_on.date }} |&nbsp;
+        Categories:&nbsp;
+        {% for category in post.categories.all %}
+        <a href="{% url 'blog_category' category.name %}">
+            {{ category.name }}
+        </a>&nbsp;
+        {% endfor %}
+    </small>
+    <br>
+    
+    <img src="/pk/files/{{post.thumbnail}}" style="max-width:100%; height:auto">
+    <p style="font-size: 10vw;">{{ post.body | linebreaks }}</p>
+    <h3>Leave a comment:</h3>
+<div class="col-md-4 offset-md-0">
+    <form action="/{{ post.pk }}/" method="POST" >
+        {% csrf_token %}
+        <div class="form-group" >
+            {{ form.author }}
+        </div>
+        <div class="form-group">
+            {{ form.body }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+    <h3 >Comments:</h3>
+    {% for comment in comments %}
+    <p>
+        
+        On {{comment.created_on.date }}&nbsp;
+        <b>{{ comment.author }}</b> wrote:
+    </p>
+    <p >{{ comment.body }}</p>
+    <hr>
+    {% endfor %}
+</div>
+<script src="{%static 'js\bootstrap.min.js'%}"></script>
+</div>
+{% endblock %}
